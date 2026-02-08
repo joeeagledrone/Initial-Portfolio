@@ -1,39 +1,144 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const email = "joemorrison1911@gmail.com";
+const github = "https://github.com/joeeagledrone";
+const linkedin = "https://www.linkedin.com/in/joseph-morrison-bb163134a";
 ---
 
 <Layout title="Contact — Joe Morrison" description="Contact">
-  <h1 class="title">Contact</h1>
+  <section class="contact">
+    <h1>Contact</h1>
+    <p class="muted">Best way to reach me:</p>
 
-  <div class="box">
-    <p class="muted">Hello! I'm always avaliable to contact.</p>
+    <div class="pillGrid">
+      <a class="pill" href={`mailto:${email}`} aria-label="Email Joe">
+        <div class="left">
+          <div class="title">Email</div>
+          <div class="sub">{email}</div>
+        </div>
+        <span class="chip">Compose</span>
+      </a>
 
-    <ul class="list">
-      <li><span>Email:</span> joemorrison1911@gmail.com</li>
-      <li><span>GitHub:</span> https://github.com/joeeagledrone</li>
-      <li><span>LinkedIn:</span> www.linkedin.com/in/joseph-morrison-bb163134a</li>
-    </ul>
-  </div>
+      <a
+        class="pill"
+        href={github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open GitHub in a new tab"
+      >
+        <div class="left">
+          <div class="title">GitHub</div>
+          <div class="sub">github.com/joeeagledrone</div>
+        </div>
+        <span class="chip">New tab</span>
+      </a>
+
+      <a
+        class="pill"
+        href={linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open LinkedIn in a new tab"
+      >
+        <div class="left">
+          <div class="title">LinkedIn</div>
+          <div class="sub">linkedin.com/in/joseph-morrison-bb163134a</div>
+        </div>
+        <span class="chip">New tab</span>
+      </a>
+    </div>
+  </section>
 
   <style>
-    .title{ font-size: 34px; margin:0; letter-spacing:-0.02em; }
-    .box{
-      margin-top: 14px;
+    .contact {
       max-width: 760px;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      padding: 18px;
     }
-    .muted{ margin:0 0 12px; color: rgba(229,231,235,.65); }
-    .list{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
-    .list li{
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.20);
-      padding: 12px;
-      color: rgba(229,231,235,.82);
+
+    .muted {
+      color: rgba(229, 231, 235, 0.75);
+      margin: 10px 0 18px;
+      line-height: 1.6;
     }
-    .list span{ color: rgba(229,231,235,.55); margin-right: 8px; }
+
+    .pillGrid {
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    /* Pill button */
+    .pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+
+      padding: 16px 18px;
+      border-radius: 999px;
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+
+      text-decoration: none;
+      color: rgba(229, 231, 235, 0.95);
+      cursor: pointer;
+
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+    }
+
+    .pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .left {
+      display: grid;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .title {
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      font-size: 16px;
+      line-height: 1.1;
+    }
+
+    .sub {
+      color: rgba(229, 231, 235, 0.65);
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 60ch;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(0, 0, 0, 0.18);
+      color: rgba(229, 231, 235, 0.75);
+      font-size: 12px;
+      font-weight: 750;
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 520px) {
+      .pill {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 20px;
+      }
+      .sub {
+        max-width: 100%;
+      }
+      .chip {
+        align-self: flex-start;
+      }
+    }
   </style>
 </Layout>

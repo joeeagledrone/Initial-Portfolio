@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact — Joe Morrison" description="Contact">
+  <h1 class="title">Contact</h1>
+
+  <div class="box">
+    <p class="muted">Hello! I'm always available to contact.</p>
+
+    <ul class="list">
+      <li><span>Email:</span> joemorrison1911@gmail.com</li>
+      <li><span>GitHub:</span> https://github.com/joeeagledrone</li>
+      <li><span>LinkedIn:</span> https://www.linkedin.com/in/joseph-morrison-bb163134a</li>
+    </ul>
+  </div>
+
+  <style>
+    .title{ font-size: 34px; margin:0; letter-spacing:-0.02em; }
+    .box{
+      margin-top: 14px;
+      max-width: 760px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+    }
+    .muted{ margin:0 0 12px; color: rgba(229,231,235,.65); }
+    .list{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+    .list li{
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+      padding: 12px;
+      color: rgba(229,231,235,.82);
+    }
+    .list span{ color: rgba(229,231,235,.55); margin-right: 8px; }
+  </style>
+</Layout>
