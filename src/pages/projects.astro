@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const NOISE_DEMO_URL = "https://youtu.be/fC-c-fhDy5Y?si=uIffJqDpDfnrPysw";
+const NOISE_GITHUB_URL = "https://github.com/joeeagledrone";
 ---
 
 <Layout title="Projects — Joe Morrison" description="Selected projects">
@@ -19,13 +22,27 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="meta">
         <div class="mini"><div class="k">Tech</div><div class="v">Python, Teachable Machine / TFLite</div></div>
-        <div class="mini"><div class="k">Focus</div><div class="v">Audio classification + UX</div></div>
-        <div class="mini"><div class="k">Outcome</div><div class="v">Prototype classifier + continuous mic input</div></div>
+        <div class="mini"><div class="k">Mode</div><div class="v">Continuous mic input</div></div>
       </div>
 
       <div class="actions">
-        <a class="btn primary" href="#">Demo (https://youtu.be/fC-c-fhDy5Y?si=uIffJqDpDfnrPysw)</a>
-        <a class="btn ghost" href="#">GitHub (https://github.com/joeeagledrone)</a>
+        <a
+          class="btn primary"
+          href={NOISE_DEMO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Demo
+        </a>
+
+        <a
+          class="btn ghost"
+          href={NOISE_GITHUB_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
       </div>
 
       <p class="note">Next: screenshots/GIFs, model details, metrics, and “how to reproduce.”</p>
@@ -34,24 +51,72 @@ import Layout from "../layouts/Layout.astro";
 
   <style>
     .title{ font-size: 34px; margin:0; letter-spacing:-0.02em; }
-    .desc{ margin:10px 0 0; color: rgba(229,231,235,.70); max-width: 720px; line-height:1.6; }
-    .stack{ margin-top: 22px; display:grid; gap: 14px; }
-    .card{ border-radius: 18px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.05); padding: 18px; }
-    .top{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; }
-    .h2{ margin:0; font-size: 18px; }
-    .tag{ font-size: 12px; color: rgba(229,231,235,.70); border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.05); padding: 4px 10px; border-radius: 999px; }
-    .body{ margin: 12px 0 0; color: rgba(229,231,235,.72); line-height:1.65; }
-    .meta{ margin-top: 14px; display:grid; gap: 10px; grid-template-columns: 1fr; }
-    @media (min-width: 720px){ .meta{ grid-template-columns: repeat(3, 1fr); } }
-    .mini{ border-radius: 14px; border:1px solid rgba(255,255,255,.10); background: rgba(0,0,0,.20); padding: 12px; }
-    .k{ font-size: 12px; color: rgba(229,231,235,.55); }
-    .v{ margin-top: 6px; font-size: 13px; color: rgba(229,231,235,.82); }
-    .actions{ margin-top: 14px; display:flex; gap: 10px; flex-wrap:wrap; }
-    .btn{ display:inline-flex; padding: 10px 14px; border-radius: 14px; font-size: 14px; font-weight: 650; text-decoration:none; border:1px solid rgba(255,255,255,.12); }
+    .desc{ margin:10px 0 0; color: rgba(229,231,235,.70); line-height:1.6; }
+
+    .stack{ margin-top: 22px; display: grid; gap: 14px; }
+
+    .card{
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 18px;
+    }
+
+    .top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .h2{ margin:0; font-size: 18px; letter-spacing:-0.01em; }
+    .tag{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      color: rgba(229,231,235,.80);
+      white-space: nowrap;
+    }
+
+    .body{ margin: 12px 0 0; color: rgba(229,231,235,.72); line-height:1.7; }
+
+    .meta{
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 720px){
+      .meta{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .mini{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.14);
+      padding: 12px 14px;
+    }
+    .k{ font-size: 12px; color: rgba(229,231,235,.60); letter-spacing:.08em; text-transform: uppercase; }
+    .v{ margin-top: 4px; color: rgba(229,231,235,.80); }
+
+    .actions{ margin-top: 14px; display:flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.12);
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+
     .primary{ background:#fff; color:#000; border-color: transparent; }
-    .primary:hover{ opacity:.92; }
+    .primary:hover{ background: rgba(255,255,255,.92); }
+
     .ghost{ background: rgba(255,255,255,.06); color: rgba(229,231,235,.92); }
-    .ghost:hover{ background: rgba(255,255,255,.10); }
-    .note{ margin: 14px 0 0; font-size: 13px; color: rgba(229,231,235,.55); }
+    .ghost:hover{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.18); }
+
+    .note{ margin: 14px 0 0; color: rgba(229,231,235,.60); line-height:1.6; }
   </style>
 </Layout>

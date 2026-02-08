@@ -1,8 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-const DEMO_URL = "https://youtu.be/REPLACE_ME";
-const GITHUB_URL = "https://github.com/joeeagledrone"; // or repo link
+const DEMO_URL = "https://youtu.be/fC-c-fhDy5Y?si=ulffJqDpDfnrPysw";
+const GITHUB_URL = "https://github.com/joeeagledrone";
 ---
 
 <Layout title="NOISE — Engine Sound Classifier" description="NOISE project case study">
@@ -14,8 +14,23 @@ const GITHUB_URL = "https://github.com/joeeagledrone"; // or repo link
     </p>
 
     <div class="actions">
-      <a class="btn primary" href={DEMO_URL} target="_blank" rel="noreferrer">Watch demo</a>
-      <a class="btn ghost" href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub</a>
+      <a
+        class="btn primary"
+        href={DEMO_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Watch demo
+      </a>
+
+      <a
+        class="btn ghost"
+        href={GITHUB_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
     </div>
   </section>
 
@@ -70,13 +85,30 @@ const GITHUB_URL = "https://github.com/joeeagledrone"; // or repo link
     .h1{ margin:0; font-size: 42px; letter-spacing:-.03em; }
     .sub{ margin:0; max-width: 700px; color: rgba(229,231,235,.72); line-height: 1.7; }
     .actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 6px; }
-    .btn{ display:inline-flex; padding: 10px 14px; border-radius: 14px; font-size: 14px; font-weight: 700; text-decoration:none; border:1px solid rgba(255,255,255,.12); }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.12);
+      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+
     .primary{ background:#fff; color:#000; border-color: transparent; }
+    .primary:hover{ background: rgba(255,255,255,.92); }
+
     .ghost{ background: rgba(255,255,255,.06); color: rgba(229,231,235,.92); }
-    .ghost:hover{ background: rgba(255,255,255,.10); }
+    .ghost:hover{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.18); }
 
     .grid{ display:grid; gap:14px; grid-template-columns: 1fr; margin-top: 18px; }
     @media (min-width: 900px){ .grid{ grid-template-columns: 1fr 1fr; } }
+
     .card{
       border-radius: 18px;
       border:1px solid rgba(255,255,255,.10);
