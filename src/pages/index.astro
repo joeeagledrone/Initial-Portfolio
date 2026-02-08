@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Joe Morrison — Portfolio" description="Engineering + software projects">
+  <section class="hero">
+    <div class="pill">
+      <span class="dot"></span>
+      Building real-world engineering + software projects
+    </div>
+
+    <h1 class="h1">
+      Portfolio
+      <span class="sub">Projects, writeups, and builds.</span>
+    </h1>
+
+    <p class="lead">
+      I’m Joe. I build hands-on engineering projects and software tools.
+      Current flagship: <strong>NOISE</strong> — an engine-sound diagnostic classifier.
+    </p>
+
+    <div class="buttons">
+      <a class="btn primary" href="/projects">View Projects</a>
+      <a class="btn ghost" href="/contact">Contact</a>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="muted">Featured</div>
+        <div class="cardTitle">NOISE App</div>
+        <div class="cardBody">
+          Classifies vehicle/engine audio into categories to assist diagnostics and troubleshooting.
+        </div>
+        <a class="link" href="/projects#noise">Read more →</a>
+      </div>
+
+      <div class="card">
+        <div class="muted">Next up</div>
+        <div class="cardTitle">Add your builds</div>
+        <div class="cardBody">
+          Suspension/alignment work, telemetry display, CAD, audio system—each gets its own page.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero{ display:flex; flex-direction:column; gap:16px; }
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      color: rgba(229,231,235,.85);
+      width: fit-content;
+    }
+    .dot{ width:8px; height:8px; border-radius: 999px; background: #34d399; }
+    .h1{ font-size: 44px; line-height:1.05; letter-spacing:-0.03em; margin:0; }
+    .sub{ display:block; color: rgba(229,231,235,.70); font-weight: 500; margin-top: 8px; }
+    .lead{ max-width: 720px; color: rgba(229,231,235,.72); font-size: 16px; line-height: 1.6; margin:0; }
+    .buttons{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 6px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px; border-radius: 14px;
+      font-size: 14px; font-weight: 650; text-decoration:none;
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .primary{ background: #fff; color:#000; border-color: transparent; }
+    .primary:hover{ opacity:.92; }
+    .ghost{ background: rgba(255,255,255,.06); color: rgba(229,231,235,.92); }
+    .ghost:hover{ background: rgba(255,255,255,.10); }
+
+    .grid{ display:grid; gap:14px; grid-template-columns: 1fr; margin-top: 18px; }
+    @media (min-width: 720px){ .grid{ grid-template-columns: 1fr 1fr; } }
+    .card{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+    }
+    .muted{ font-size: 12px; color: rgba(229,231,235,.55); }
+    .cardTitle{ margin-top: 6px; font-size: 18px; font-weight: 700; }
+    .cardBody{ margin-top: 8px; font-size: 14px; color: rgba(229,231,235,.70); line-height: 1.6; }
+    .link{ display:inline-flex; margin-top: 14px; font-size: 14px; font-weight: 650; color: rgba(165,180,252,.95); text-decoration:none; }
+    .link:hover{ color: rgba(199,210,254,1); }
+  </style>
+</Layout>

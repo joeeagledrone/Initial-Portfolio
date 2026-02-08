@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About — Joe Morrison" description="About Joe">
+  <h1 class="title">About</h1>
+  <div class="box">
+    <p>
+      I’m a hands-on engineering student and builder. I like projects that blend physical systems with software—diagnostics,
+      telemetry, controls, and anything that makes machines more understandable.
+    </p>
+    <p>
+      This portfolio is a living log: what I built, what broke, what I measured, and what I improved.
+    </p>
+  </div>
+
+  <style>
+    .title{ font-size: 34px; margin:0; letter-spacing:-0.02em; }
+    .box{
+      margin-top: 14px;
+      max-width: 760px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+      color: rgba(229,231,235,.72);
+      line-height: 1.7;
+    }
+    .box p{ margin: 0 0 12px; }
+    .box p:last-child{ margin-bottom: 0; }
+  </style>
+</Layout>

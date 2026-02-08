@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Resume — Joe Morrison" description="Resume">
+  <section class="hero">
+    <h1>Resume</h1>
+    <p class="muted">
+      Fast view + download. Full PDF opens in a new tab.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="/resume.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+      <a class="btn ghost" href="/resume.pdf" download>Download</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <img class="preview" src="/resume-preview.png" alt="Resume preview" />
+  </section>
+
+  <style>
+    .hero{ display:flex; flex-direction:column; gap:10px; }
+    h1{ margin:0; font-size: 40px; letter-spacing:-.02em; }
+    .muted{ margin:0; color: rgba(229,231,235,.70); line-height:1.7; }
+
+    .actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 6px; }
+    .btn{ display:inline-flex; padding: 10px 14px; border-radius: 14px; font-size: 14px; font-weight: 800; text-decoration:none; border:1px solid rgba(255,255,255,.12); }
+    .primary{ background:#fff; color:#000; border-color: transparent; }
+    .ghost{ background: rgba(255,255,255,.06); color: rgba(229,231,235,.92); }
+    .ghost:hover{ background: rgba(255,255,255,.10); }
+
+    .card{
+      margin-top: 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      overflow: hidden;
+    }
+    .preview{
+      width: 100%;
+      display: block;
+    }
+  </style>
+</Layout>

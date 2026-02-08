@@ -1,0 +1,112 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const DEMO_URL = "https://youtu.be/REPLACE_ME";
+const GITHUB_URL = "https://github.com/joeeagledrone"; // or repo link
+---
+
+<Layout title="NOISE — Engine Sound Classifier" description="NOISE project case study">
+  <section class="hero">
+    <div class="kicker">Case Study</div>
+    <h1 class="h1">NOISE — Engine Sound Classifier</h1>
+    <p class="sub">
+      A lightweight app that listens to engine audio and classifies patterns into diagnostic categories.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href={DEMO_URL} target="_blank" rel="noreferrer">Watch demo</a>
+      <a class="btn ghost" href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>Problem</h2>
+      <p>
+        Engine issues can produce subtle audio signatures. I wanted a fast way to narrow down likely causes
+        using sound classification as a first-pass filter.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Approach</h2>
+      <ul>
+        <li>Collected labeled samples per sound category</li>
+        <li>Trained a classifier (Teachable Machine / TFLite pipeline)</li>
+        <li>Built a simple UI for continuous mic input + live prediction</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Results</h2>
+      <ul>
+        <li>Working prototype that runs predictions continuously</li>
+        <li>Usable for quick “what does this sound like?” triage</li>
+        <li>Next: expand dataset, evaluate confusion, reduce false positives</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Tech</h2>
+      <div class="tags">
+        <span>Python</span><span>TFLite</span><span>Teachable Machine</span><span>Audio</span><span>UI</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="media">
+    <h2>Gallery</h2>
+    <p class="muted">Drop images into <code>public/noise/</code> and update these filenames.</p>
+
+    <div class="gallery">
+      <img src="/noise/ui.png" alt="NOISE UI screenshot" />
+      <img src="/noise/flow.png" alt="Pipeline diagram" />
+    </div>
+  </section>
+
+  <style>
+    .hero{ display:flex; flex-direction:column; gap:12px; }
+    .kicker{ color: rgba(229,231,235,.65); font-size: 12px; letter-spacing:.12em; text-transform: uppercase; }
+    .h1{ margin:0; font-size: 42px; letter-spacing:-.03em; }
+    .sub{ margin:0; max-width: 700px; color: rgba(229,231,235,.72); line-height: 1.7; }
+    .actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 6px; }
+    .btn{ display:inline-flex; padding: 10px 14px; border-radius: 14px; font-size: 14px; font-weight: 700; text-decoration:none; border:1px solid rgba(255,255,255,.12); }
+    .primary{ background:#fff; color:#000; border-color: transparent; }
+    .ghost{ background: rgba(255,255,255,.06); color: rgba(229,231,235,.92); }
+    .ghost:hover{ background: rgba(255,255,255,.10); }
+
+    .grid{ display:grid; gap:14px; grid-template-columns: 1fr; margin-top: 18px; }
+    @media (min-width: 900px){ .grid{ grid-template-columns: 1fr 1fr; } }
+    .card{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+    }
+    .card h2{ margin:0 0 10px; font-size: 16px; }
+    .card p, .card li{ color: rgba(229,231,235,.72); line-height: 1.7; }
+    .card ul{ margin:0; padding-left: 18px; }
+
+    .tags{ display:flex; gap:8px; flex-wrap:wrap; }
+    .tags span{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+      color: rgba(229,231,235,.85);
+    }
+
+    .media{ margin-top: 18px; }
+    .muted{ color: rgba(229,231,235,.60); }
+    .gallery{ display:grid; gap:12px; grid-template-columns: 1fr; margin-top: 10px; }
+    @media (min-width: 900px){ .gallery{ grid-template-columns: 1fr 1fr; } }
+    .gallery img{
+      width: 100%;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+    }
+    code{ background: rgba(255,255,255,.08); padding: 2px 6px; border-radius: 8px; }
+  </style>
+</Layout>

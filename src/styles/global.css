@@ -1,0 +1,39 @@
+:root {
+    color-scheme: dark;
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+    /* creates a new stacking context */
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: #0b0f19;
+    color: #e5e7eb;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+a {
+    color: inherit;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    inset: -45vh -45vw auto -45vw;
+    height: 70vh;
+    pointer-events: none;
+    z-index: -2;
+    opacity: 0.55;
+    filter: blur(18px);
+    background:
+        radial-gradient(circle at 25% 20%, rgba(99, 102, 241, .22), transparent 60%),
+        radial-gradient(circle at 70% 10%, rgba(16, 185, 129, .14), transparent 60%);
+}
