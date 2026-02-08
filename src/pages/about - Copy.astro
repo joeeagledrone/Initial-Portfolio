@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About — Joe Morrison" description="About Joe">
+  <h1 class="title">About</h1>
+  <div class="box">
+    <p>
+      I’m Joe Morrison. I build, test, and fix things that have to work in the real world.
+       I came up through hands-on, high-risk field work, so I’m big on safety, procedure, and doing it right the first time, but I also move fast when it’s time to solve a problem.
+       I like messy, practical challenges where you have to figure out what’s failing, why it’s failing, and how to make it bulletproof. Lately that’s meant engineering projects, prototyping, and learning new tools until they do what I want.
+       I’m aiming at aerospace and high-performance mechanical work because I want to be on teams where reliability, testing, and clean execution are the whole game.
+    </p>
+    <p>
+      This portfolio is a living log: what I built, what broke, what I measured, and what I improved.
+    </p>
+  </div>
+
+  <style>
+    .title{ font-size: 34px; margin:0; letter-spacing:-0.02em; }
+    .box{
+      margin-top: 14px;
+      max-width: 760px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+      color: rgba(229,231,235,.72);
+      line-height: 1.7;
+    }
+    .box p{ margin: 0 0 12px; }
+    .box p:last-child{ margin-bottom: 0; }
+  </style>
+</Layout>

@@ -2,33 +2,96 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="About — Joe Morrison" description="About Joe">
-  <h1 class="title">About</h1>
-  <div class="box">
-    <p>
-      I’m Joe Morrison. I build, test, and fix things that have to work in the real world.
-       I came up through hands-on, high-risk field work, so I’m big on safety, procedure, and doing it right the first time, but I also move fast when it’s time to solve a problem.
-       I like messy, practical challenges where you have to figure out what’s failing, why it’s failing, and how to make it bulletproof. Lately that’s meant engineering projects, prototyping, and learning new tools until they do what I want.
-       I’m aiming at aerospace and high-performance mechanical work because I want to be on teams where reliability, testing, and clean execution are the whole game.
-    </p>
-    <p>
-      This portfolio is a living log: what I built, what broke, what I measured, and what I improved.
-    </p>
-  </div>
+<Layout title="About • Joe Morrison" description="About Joe Morrison">
+  <section class="aboutPage">
+    <h1 class="aboutTitle">About</h1>
 
-  <style>
-    .title{ font-size: 34px; margin:0; letter-spacing:-0.02em; }
-    .box{
-      margin-top: 14px;
-      max-width: 760px;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
-      padding: 18px;
-      color: rgba(229,231,235,.72);
-      line-height: 1.7;
+    <div class="aboutMedia">
+      <img
+        src="/about.jpg"
+        alt="Joe Morrison — about photo"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+
+    <div class="aboutCard">
+      <p>
+        I’m Joe Morrison. I build, test, and fix things that have to work in the real world. I came up through
+        hands-on, high-risk field work, so I’m big on safety, procedure, and doing it right the first time, but I
+        also move fast when it’s time to solve a problem. I like messy, practical challenges where you have to
+        figure out what’s failing, why it’s failing, and how to make it bulletproof. Lately that’s meant
+        engineering projects, prototyping, and learning new tools until they do what I want. I’m aiming at
+        aerospace and high-performance mechanical work because I want to be on teams where reliability, testing,
+        and clean execution are the whole game.
+      </p>
+
+      <p class="aboutOutro">
+        This portfolio is a living log: what I built, what broke, what I measured, and what I improved.
+      </p>
+    </div>
+  </section>
+
+  <style is:global>
+    .aboutPage{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 16px 60px;
     }
-    .box p{ margin: 0 0 12px; }
-    .box p:last-child{ margin-bottom: 0; }
+
+    /* Center the About title */
+    .aboutTitle{
+      text-align: center;
+      margin: 14px 0 18px;
+      letter-spacing: -0.02em;
+    }
+
+    /* 16:9 image block */
+    .aboutMedia{
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+
+      margin: 0 auto 18px;
+    }
+
+    .aboutMedia img{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;      /* keeps it 16:9 and crops nicely */
+      object-position: center; /* center crop */
+      filter: saturate(1.02) contrast(1.02);
+    }
+
+    /* Your existing glass text box vibe */
+    .aboutCard{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 18px 18px;
+      color: rgba(229,231,235,.78);
+      line-height: 1.75;
+    }
+
+    .aboutCard p{
+      margin: 0 0 14px;
+    }
+
+    .aboutOutro{
+      margin: 0;
+      color: rgba(229,231,235,.65);
+    }
+
+    @media (max-width: 520px){
+      .aboutPage{ padding-top: 18px; }
+      .aboutCard{ padding: 16px; }
+    }
   </style>
 </Layout>
